@@ -1,0 +1,44 @@
+[data-id='dialogue'].dialogue-body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, .6);
+}
+
+[data-id='dialogue'].dialogue-body .dialogue-container {
+  max-width: 60vw;
+  background: #fff;
+  box-shadow: 0 0 3px rgba(2, 2, 2, 0.6);
+}
+
+[data-id='dialogue'].dialogue-body .dialogue-container .dialogue-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eeeeeeaf;
+}
+
+[data-id='dialogue'].dialogue-body .dialogue-container .dialogue-title-container .dialogue-close-button {
+  cursor: pointer;
+}
+
+[data-id='dialogue'].dialogue-body .dialogue-container .dialogue-main,
+[data-id='dialogue'].dialogue-body .dialogue-container .dialogue-title-container,
+[data-id='dialogue'].dialogue-body .dialogue-container .dialogue-footer {
+  padding: .8em;
+}
+
+[data-id='dialogue'].dialogue-body .dialogue-container .dialogue-footer {
+  position: relative;
+}
+
+[data-id='dialogue'].dialogue-body .dialogue-container .dialogue-footer .dialogue-footer-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: .4em;
+}
