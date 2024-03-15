@@ -29,7 +29,7 @@ export default class dialogue {
     main.classList.add("dialogue-main");
     footer.classList.add("dialogue-footer");
 
-    const x = document.createTextNode('&times;');
+    const x = document.createTextNode('×');
     close_btn.appendChild(x);
 
     this.#body = body;
@@ -40,7 +40,7 @@ export default class dialogue {
 
     typeof titleContent === "function" && titleContent instanceof HTMLElement ? 
       this.#title.appendChild(titleContent) : 
-      this.#title.textContent = titleContent;
+      this.#title.setAttribute("vlang-text", titleContent);
 
     title_container.appendChild(this.#title);
     addClose_btn ? title_container.appendChild(close_btn) : null;
@@ -53,6 +53,7 @@ export default class dialogue {
     document.querySelector('body').appendChild(this.#body);
 
     close_btn.addEventListener('click', () => this.hide());
+
     return this
   }
 
@@ -103,13 +104,8 @@ export default class dialogue {
     return this;
   }
 
-  show() {
-    this.#body.style.display === 'none' ? this.#body.style.display = "block" : console.warn('The element is already showed');
-    return this
-  }
-
   hide() {
-    this.#body.style.display === "block" ? this.#body.style.display = "none" : console.warn("This dialog is already hidden");
+    this.#body.remove();
     return this;
   }
 
